@@ -5,6 +5,7 @@
         <title>YeplCamp</title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link rel="stylesheet" href="/stylesheets/main.css">
+        <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
     </head>
     <body>
       <nav class="navbar navbar-default">
@@ -24,6 +25,9 @@
               <li class="active"><a href="/campgrounds">Home</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
+                    <% if(currentUser && currentUser.isAdmin) { %>
+                      <li><a href="#"><i class="fas fa-unlock-alt"></i></a></li>
+                    <%  } %>
                     <% if(!currentUser){ %>
                         <li><a href="/login">Login</a></li>
                         <li><a href="/register">Sign Up</a></li>
