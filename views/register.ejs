@@ -5,20 +5,45 @@
     <div style="width: 30%; margin: 25px auto;">
         <form action="/register" method="post">
             <div class="form-group">
-                <input class="form-control" type="text" name="username" placeholder="username">
+                <label for="username">Username</label>
+                <input class="form-control" type="text" id="username" name="username" placeholder="My Awesome Username">
             </div>
             <div class="form-group">
-                <input class="form-control" type="password" name="password" placeholder="password">
+                <label for="password">Password</label>
+                <input class="form-control" id="password" type="password" name="password" placeholder="Super Secret Password">
             </div>
             <div class="form-group">
-                <input class="form-control" type="text" name="adminCode" placeholder="Admin Code">
+                <label for="adminCode"> Register As Admin: </label>
+                <input class="form-comtrol" type="checkbox" id="isChecked" onclick="showHide()">
+                <input class="form-control" id="adminCode" type="text" name="adminCode" style="display:none" placeholder="Your Admin Code">
             </div>
             <div class="form-group">
                 <button class="btn btn-lg btn-primary btn-block">Sign Up!</button>
             </div>
         </form>
-        <a href="/campgrounds">Go Back</a>
+        <div>
+            <a href="/campgrounds">Go Back</a>
+            <a href="/login" class="pull-right">Already Registered?</a>
+        </div>
     </div>
 </div>
+<!--Checkbox: <input type="checkbox" id="myCheck" onclick="myFunction()">-->
+
+<p id="text" style="display:none">Checkbox is CHECKED!</p>
+
+<script>
+    function showHide() {
+      // Get the checkbox
+      var checkBox = document.getElementById("isChecked");
+      // Get the output text
+      var text = document.getElementById("adminCode");
+      // If the checkbox is checked, display the output text
+      if (checkBox.checked == true){
+        text.style.display = "block";
+      } else {
+        text.style.display = "none";
+      }
+    }
+</script>
 
 <% include partials/footer %>
