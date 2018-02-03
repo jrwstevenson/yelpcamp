@@ -3,24 +3,21 @@
 
 <header class="jumbotron">
     <div class="container">
-        <h1>Welcome to YelpCamp</h1>
-        <p>View our Campgrounds</p>
-        <p>
-            <a class="btn btn-primary btn-lg" href="campgrounds/new">Add New</a>
-        </p>
+        <h1>YelpCamp User Directory</h1>
+        <p>View our Users</p>
     </div>
 </header>
 
 <div class="row text-center" style="display:flex; flex-wrap:wrap">
-    <% campgrounds.forEach(function(campground){ %>
+    <% users.forEach(function(user){ %>
         <div class="col-md-3 col-sm-6">
             <div class="thumbnail">
-              <img src="<%= campground.image %>"></img> 
+              <img src="<%= user.avatar %>"></img> 
               <div class="caption">
-                  <h4><%= campground.name %></h4>
+                  <h4><%= user.username %></h4>
               </div>
               <p>
-                  <a class="btn btn-primary" href="/campgrounds/<%= campground._id %>">More Info</a>
+                  <a class="btn btn-primary" href="/users/<%= user._id %>">More Info</a>
               </p>
             </div>
         </div>

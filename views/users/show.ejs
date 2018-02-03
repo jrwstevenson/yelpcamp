@@ -6,6 +6,7 @@
 		<div class="thumbnail">
 			<img src="<%= user.avatar %>" alt="user profile image">
 			<div class="caption"><a href="mailto:<%= user.email %>"><%= user.email %></a></div>
+			<a class="btn btn-xs btn-warning" href="/users/<%= user._id %>/edit">Edit Profile</a>
 		</div>
 		Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error quasi similique architecto ad modi sunt quaerat possimus, officiis quos. Voluptatibus repellendus exercitationem, id saepe sunt consectetur non quam sapiente assumenda.
 
@@ -13,11 +14,21 @@
 	</div>
 	<div class="col-md-8">
 		<h3><%= user.username %>'s campgrounds:</h3>
-		<ul>
-		<% campgrounds.forEach(function(campground) { %>
-			<li><a href="/campgrounds/<%= campground.id %>"><%= campground.name %></a></li>
-		<% }); %>
-		</ul>
+		<div class="row text-center" style="display:flex; flex-wrap:wrap">
+		    <% campgrounds.forEach(function(campground){ %>
+		        <div class="col-md-3 col-sm-6">
+		            <div class="thumbnail">
+		              <img src="<%= campground.image %>"></img> 
+		              <div class="caption">
+		                  <h4><%= campground.name %></h4>
+		              </div>
+		              <p>
+		                  <a class="btn btn-primary" href="/campgrounds/<%= campground._id %>">More Info</a>
+		              </p>
+		            </div>
+		        </div>
+		    <% }); %>
+		 </div>
 	</div>
 </div>
 
