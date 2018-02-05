@@ -26,17 +26,25 @@
               <li><a href="/users">Users</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                    <% if(currentUser && currentUser.isAdmin) { %>
-                      <li><a href="#"><i class="fas fa-unlock-alt"></i></a></li>
-                    <%  } %>
-                    <% if(!currentUser){ %>
-                        <li><a href="/login">Login</a></li>
-                        <li><a href="/register">Sign Up</a></li>
-                    <% } else { %>
-                        <li><a href="#">Signed In As <%= currentUser.username %></a></li>
-                        <li><a href="/logout">Logout</a></li>
-                    <% } %>
-                </ul>
+                <% if(currentUser && currentUser.isAdmin) { %>
+                  <li><a href="#"><i class="fas fa-unlock-alt"></i></a></li>
+                <%  } %>
+                <% if(!currentUser){ %>
+                    <li><a href="/login">Login</a></li>
+                    <li><a href="/register">Sign Up</a></li>
+                <% } else { %>
+                    <li class="dropdown">
+                  <a class="dropdown-toggle" data-toggle="dropdown" href="#">Signed In As <%= currentUser.username %>
+                  <span class="caret"></span></a>
+                  <ul class="dropdown-menu">
+                    <li><a href="/users/<%= currentUser._id%>">My Profile</a></li>
+                    <li><a href="/users/<%= currentUser._id%>/edit">Edit My Profile</a></li>
+                    <li class="divider"></li>
+                    <li><a href="/logout">Logout</a></li>
+                  </ul>
+                </li>
+                <% } %>
+              </ul>
           </div>
       </div>
   </nav>
