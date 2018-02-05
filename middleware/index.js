@@ -32,10 +32,10 @@ middlewareObj.checkUserOwnership = function(req, res, next) {
         User.findById(req.params.id, function(err, foundUser){
            if(err || !foundUser){
                req.flash("error", "Campground not found");
-               res.redirect("back");
+               res.redirect("/users");
            }  else {
-               // does user own the campground?
-            if(foundUser.author.id.equals(req.user._id) || req.user.isAdmin) {
+               // does user own the profil?
+            if(foundUser.equals(req.user._id) || req.user.isAdmin) {
                 next();
             } else {
                 req.flash("error", "You don't have permission to do that!")
