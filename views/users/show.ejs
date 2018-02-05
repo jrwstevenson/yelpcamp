@@ -6,8 +6,8 @@
 		<div class="thumbnail">
 			<img src="<%= user.avatar %>" alt="user profile image">
 			<div class="caption"><a href="mailto:<%= user.email %>"><%= user.email %></a></div>
-			<%if(currentUser && currentUser.equals(user._id) || currentUser && currentUser.isAdmin) { %>
-			<div class="container">
+			<%if(currentUser && currentUser.isAdmin) { %>
+			<div class="container" style="padding-bottom: 15px;">
 				<a class="btn btn-xs btn-warning" href="/users/<%= user._id %>/edit">Edit Profile</a>
 				<form class="delete-form" action="/users/<%= user._id %>?_method=DELETE" method="POST">
                         <button class="btn btn-xs btn-danger">Delete</button>
@@ -15,15 +15,12 @@
 			</div>
 			<% } %>
 		</div>
-		Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error quasi similique architecto ad modi sunt quaerat possimus, officiis quos. Voluptatibus repellendus exercitationem, id saepe sunt consectetur non quam sapiente assumenda.
-
-		Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error quasi similique architecto ad modi sunt quaerat possimus, officiis quos. Voluptatibus repellendus exercitationem, id saepe sunt consectetur non quam sapiente assumenda.
 	</div>
 	<div class="col-md-8">
 		<h3><%= user.username %>'s campgrounds:</h3>
-		<div class="row text-center" style="display:flex; flex-wrap:wrap">
+		<div class="row text-center equal-height" style="display:flex; flex-wrap:wrap">
 		    <% campgrounds.forEach(function(campground){ %>
-		        <div class="col-md-3 col-sm-6">
+		        <div class="col-md-4 col-sm-6">
 		            <div class="thumbnail">
 		              <img src="<%= campground.image %>"></img> 
 		              <div class="caption">

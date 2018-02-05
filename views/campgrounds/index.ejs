@@ -1,12 +1,20 @@
 <% include ../partials/header %>
 
 
-<header class="jumbotron">
+<header class="jumbotron jumboCamp">
     <div class="container">
-        <h1>Welcome to YelpCamp</h1>
-        <p>View our Campgrounds</p>
+        <h1 class="jumboText">YelpCamp Campgrounds</h1>
+        <p>We Have <%= campgrounds.length %> Campgrounds Listed</p>
         <p>
-            <a class="btn btn-primary btn-lg" href="campgrounds/new">Add New</a>
+            <a class="btn btn-primary btn-lg" href="campgrounds/new">Add New Campground</a>
+        </p>
+        <p>
+            <form action="/campgrounds" method="GET" class="form-inline">
+                <div class="form-group">
+                    <input tupe="text" name="search" placeholder="Search" class="form-control">
+                    <input type="submit" value="Search" class="btn btn-default">
+                </div>
+            </form>
         </p>
     </div>
 </header>
