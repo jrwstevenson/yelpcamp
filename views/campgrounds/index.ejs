@@ -1,20 +1,12 @@
 <% include ../partials/header %>
 
 
-<header class="jumbotron jumboCamp">
+<header class="jumbotron jumboCamp shadow">
     <div class="container">
         <h1 class="jumboText">YelpCamp Campgrounds</h1>
-        <p>We Have <%= campgrounds.length %> Campgrounds Listed</p>
+        <p>We Currently Have <%= campgrounds.length %> Campgrounds Listed</p>
         <p>
             <a class="btn btn-primary btn-lg" href="campgrounds/new">Add New Campground</a>
-        </p>
-        <p>
-            <form action="/campgrounds" method="GET" class="form-inline">
-                <div class="form-group">
-                    <input tupe="text" name="search" placeholder="Search" class="form-control">
-                    <input type="submit" value="Search" class="btn btn-default">
-                </div>
-            </form>
         </p>
     </div>
 </header>
@@ -22,7 +14,7 @@
 <div class="row text-center equal-height" style="display:flex; flex-wrap:wrap">
     <% campgrounds.forEach(function(campground){ %>
         <div class="col-md-3 col-sm-6">
-            <div class="thumbnail">
+            <div class="thumbnail shadow">
               <img src="<%= campground.image %>"></img> 
               <div class="caption">
                   <h4><%= campground.name %></h4>

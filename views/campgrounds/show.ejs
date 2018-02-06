@@ -2,14 +2,14 @@
 <div class="row">
     <div class="col-md-3">
         <p class="lead">YelpCamp</p>
-        <div class="list-group">
+        <div class="list-group shadow">
             <li class="list-group-item active">Info 1</li>
             <li class="list-group-item">Info 2</li>
             <li class="list-group-item">Info 3</li>
         </div>
     </div>
     <div class="col-md-9">
-        <div class="thumbnail">
+        <div class="thumbnail shadow">
             <img class="image-responsive" src="<%= campground.image %>">
             <div class="caption-full">
                 <h4 class="pull-right">
@@ -30,7 +30,7 @@
                 
             </div>
         </div>
-        <div class="well">
+        <div class="well shadow">
             <div class="text-right">
                 <a class="btn btn-success" href="/campgrounds/<%= campground._id %>/comments/new">Add Comment</a>
             </div>

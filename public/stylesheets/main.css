@@ -53,10 +53,7 @@ body {
 .thumbnail {
     padding: 0;
     border: none;
-    box-shadow: 0px 2px 3px rgba(0,0,0,0.2),
-				 0px 6px 8px rgba(0,0,0,0.1),
-				 0px 10px 15px rgba(0,0,0,0.1);
-	background-color: #FCFCFF;
+    background-color: #FCFCFF;
 }
 
 .thumbnail .caption-full {
@@ -65,6 +62,22 @@ body {
 
 .delete-form {
     display: inline;
+    
+}
+
+.shadow {
+    box-shadow: 0px 2px 3px rgba(0,0,0,0.2),
+				 0px 6px 8px rgba(0,0,0,0.1),
+				 0px 10px 15px rgba(0,0,0,0.1);
+}
+
+.form {
+    background: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0px 2px 3px rgba(0,0,0,0.2),
+				 0px 6px 8px rgba(0,0,0,0.1),
+				 0px 10px 15px rgba(0,0,0,0.1);
 }
 
 /* Google Maps */

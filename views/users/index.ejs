@@ -1,17 +1,17 @@
 <% include ../partials/header %>
 
 
-<header class="jumbotron jumboUser">
+<header class="jumbotron jumboUser shadow">
     <div class="container">
         <h1>YelpCamp User Directory</h1>
-        <p>We have <%= users.length %> Users</p>
+        <p>We Currently Have <%= users.length %> Users</p>
     </div>
 </header>
 
 <div class="row text-center equal-height" style="display:flex; flex-wrap:wrap">
     <% users.forEach(function(user){ %>
         <div class="col-md-3 col-sm-6">
-            <div class="thumbnail">
+            <div class="thumbnail shadow">
               <img src="<%= user.avatar %>"></img> 
               <div class="caption">
                   <h4><%= user.username %></h4>
