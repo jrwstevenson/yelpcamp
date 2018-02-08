@@ -1,9 +1,8 @@
 <% include ./partials/header %>
 <div class="row">
-    <h1 style="text-align: center">Forgot Password</h1>
+    <h1 style="text-align: center">Password Reset</h1>
 	<div style="width: 30%; margin: 25px auto;">
 		<form action="/reset/<%= token %>" method="POST" class="form shadow">
-		  <legend>Reset Password</legend>
 		  <div class="form-group">
 		    <label for="password">New Password</label>
 		    <input type="password" name="password" value="" placeholder="New password" autofocus="autofocus" class="form-control"/>
